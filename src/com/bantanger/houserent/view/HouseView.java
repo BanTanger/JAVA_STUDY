@@ -31,30 +31,30 @@ public class HouseView {
         if (house == null){
             System.out.println("==========修改房屋信息id不存在...==========");
         }
-        System.out.println("姓名("+house.getName()+")");
+        System.out.print("姓名("+house.getName()+"):");
         String name = Utility.readString(8,"");//若用户直接回车 ”“代表默认值
         if (!"".equals(name)){
             house.setName(name);
         }
-        System.out.println("电话("+house.getPhone()+")");
+        System.out.print("电话("+house.getPhone()+"):");
         String phone = Utility.readString(12,"");
         if (!"".equals(phone)){
             house.setPhone(phone);
         }
-        System.out.println("地址("+house.getAddress()+")");
+        System.out.print("地址("+house.getAddress()+"):");
         String address = Utility.readString(16,"");
         if (!"".equals(address)){
             house.setPhone(address);
         }
-        System.out.println("租金("+house.getRent()+")");
+        System.out.print("租金("+house.getRent()+"):");
         int rent = Utility.readInt(-1);// 如果直接回车，返回-1
         if (rent != -1){
             house.setPhone(address);
         }
-        System.out.println("状态("+house.getState()+")");
+        System.out.print("状态("+house.getState()+"):");
         String state = Utility.readString(3,"");
         if (!"".equals(state)){
-            house.setPhone(state);
+            house.setState(state);
         }
     }
     // FindHouse() 接收输入的id
@@ -148,7 +148,7 @@ public class HouseView {
                     DelHouse();
                     break;
                 case '4':
-                    System.out.println("修改");
+                    Revisehouse();
                     break;
                 case '5':
                     ListHouse();
